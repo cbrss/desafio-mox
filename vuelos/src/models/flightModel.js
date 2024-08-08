@@ -12,6 +12,7 @@ class Flight {
 	static async getConnection() {
 		return mysql.createPool({
 			host: envs.DB_HOST,
+			port: envs.DB_PORT,
 			user: envs.DB_USER,
 			password: envs.DB_PASS,
 			database: envs.DB_NAME,
