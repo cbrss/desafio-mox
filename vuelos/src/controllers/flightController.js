@@ -78,13 +78,11 @@ controller.findAll = async (req, res) => {
 			flights,
 		});
 	} catch (error) {
-		res.status(500).json(
-			{
-				success: false,
-				message: "Error retrieving flights",
-			},
-			error
-		);
+		res.status(500).json({
+			success: false,
+			message: "Error retrieving flights",
+			error,
+		});
 	}
 };
 

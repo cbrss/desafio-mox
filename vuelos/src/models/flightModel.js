@@ -45,7 +45,7 @@ class Flight {
 				codFlight,
 			]);
 		} catch (error) {
-			console.log(error);
+			throw error;
 		} finally {
 			await connection.end();
 		}
@@ -56,7 +56,7 @@ class Flight {
 			const [flights] = await connection.execute("SELECT * FROM flight");
 			return flights;
 		} catch (error) {
-			console.log(error);
+			throw error;
 		} finally {
 			await connection.end();
 		}
@@ -91,7 +91,7 @@ class Flight {
 				]
 			);
 		} catch (error) {
-			console.log(error);
+			throw error;
 		} finally {
 			await connection.end();
 		}

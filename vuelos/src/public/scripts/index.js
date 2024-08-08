@@ -7,10 +7,11 @@ const generalError = document.getElementById("generalError");
 document.addEventListener("DOMContentLoaded", async () => {
 	try {
 		const response = await fetch("/api/flights");
-		const data = await response.json();
 
-		if (data.success) {
-			const flights = data.flights;
+		const result = await response.json();
+
+		if (result.success) {
+			const flights = result.flights;
 
 			flights.forEach((flight) => {
 				const clone = templateFlightRow.content.cloneNode(true);
@@ -28,8 +29,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 				fragment.appendChild(clone);
 			});
 			flightsTableBody.appendChild(fragment);
+		} else {
+			generalError.textContent = `Error en la solicitud de vuelos`;
 		}
 	} catch (error) {
-		generalError.textContent = "Error en la conexion con la base de datos";
+		generalError.textContent = `Error en la conexion con la base de datos`;
 	}
 });

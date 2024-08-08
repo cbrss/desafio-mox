@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 					.remove();
 				alert("Vuelo eliminado");
 			} else {
-				generalError.textContent = result.errors;
+				generalError.textContent += `Error en la solicitud de vuelos`;
 			}
 			updateForm();
 		} catch (error) {
