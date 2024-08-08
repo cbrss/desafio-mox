@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Gestion de vuelos</title>
+
+		<link rel="stylesheet" href="/styles/app.css" />
+	</head>
+	<body>
+		<div class="body-container">
+			<header class="header">
+				<nav class="nav-links">
+					<ul>
+						<li><a href="/">Vuelos</a></li>
+						<li><a href="/register">Alta</a></li>
+						<li><a href="/delete">Baja</a></li>
+						<li>
+							<a class="active" href="/">Modificacion</a>
+						</li>
+					</ul>
+				</nav>
+			</header>
+			<div class="p-container">
+				<span>Modificar</span>
+				<p id="generalError" class="text-error" d-none></p>
+				<form id="editForm" class="form" novalidate>
+					<label>Vuelo</label>
+					<div class="edit-container">
+						<select id="codFlightSelect">
+							<option value="" disabled selected>
+								Seleccione un vuelo
+							</option>
+						</select>
+					</div>
+
+					<label>Horario llegada</label>
+					<input
+						type="time"
+						name="arrivalTime"
+						placeholder="--:--"
+						autocomplete="off"
+					/>
+					<p class="text-error" id="arrivalTimeError"></p>
+
+					<label>Linea aerea</label>
+					<input
+						type="text"
+						name="airLine"
+						placeholder="Linea Aerea p.ej.: Latam"
+						autocomplete="off"
+					/>
+					<p class="text-error" id="airLineError"></p>
+
+					<div class="checkbox-container">
+						<input type="checkbox" name="delayedB" />
+						<label for="delayedB">Demorado</label>
+					</div>
+
+					<button type="submit">Editar</button>
+				</form>
+			</div>
+			<footer></footer>
+		</div>
+
+		<template id="templateOptionFlight">
+			<option></option>
+		</template>
+
+		<script type="module" src="/scripts/edit_flight.js"></script>
+	</body>
+</html>

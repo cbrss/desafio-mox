@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Gestion de vuelos</title>
+
+		<link rel="stylesheet" href="/styles/app.css" />
+	</head>
+	<body>
+		<div class="body-container">
+			<header class="header">
+				<nav class="nav-links">
+					<ul>
+						<li><a href="/">Vuelos</a></li>
+						<li>
+							<a class="active" href="/register">Alta</a>
+						</li>
+						<li><a href="/delete">Baja</a></li>
+						<li><a href="/edit">Modificacion</a></li>
+					</ul>
+				</nav>
+			</header>
+			<div class="p-container">
+				<span>Registrar vuelo</span>
+				<p id="generalError" class="text-error" d-none></p>
+				<form id="registerForm" class="form" novalidate>
+					<label>Horario llegada</label>
+					<input
+						type="time"
+						name="arrivalTime"
+						placeholder="--:--"
+						autocomplete="off"
+					/>
+					<p id="arrivalTimeError" class="text-error"></p>
+					<label>Vuelo</label>
+					<input
+						type="text"
+						name="codFlight"
+						placeholder="Codigo de vuelo p.ej.: AU 2399"
+						autocomplete="off"
+					/>
+					<p id="codFlightError" class="text-error"></p>
+
+					<label>Linea aerea</label>
+					<input
+						type="text"
+						name="airLine"
+						placeholder="Linea Aerea p.ej.: Latam"
+						autocomplete="off"
+					/>
+					<p id="airLineError" class="text-error"></p>
+
+					<div class="checkbox-container">
+						<input type="checkbox" name="delayedB" />
+						<label for="delayedB">Demorado</label>
+					</div>
+
+					<button type="submit">Guardar</button>
+				</form>
+			</div>
+			<footer></footer>
+		</div>
+		<script type="module" src="/scripts/register_flight.js"></script>
+	</body>
+</html>

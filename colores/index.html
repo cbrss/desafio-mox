@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Juego de colores</title>
+
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="app.css">
+
+	</head>
+
+	<body>
+		<div class="container text-center center-vertical">
+			<div id="menu" class="d-flex flex-column justify-content-center ">
+				<h1 class="center-text">Detecta el color</h1>
+				<h6 class="center-text">Selecciona la dificultad:</h1>
+
+				<div class="d-flex justify-content-center">
+					<select id="difficulty" class="form-select w-25 me-2">
+						<option value="easy">Facil</option>
+						<option value="normal">Normal</option>
+						<option value="hard">Dificil</option>
+					</select>
+					<button id="play" class="btn btn-primary">Jugar</button>
+				</div>
+				
+			</div>
+			<div id="game" class="d-none">
+				<h1 id="hex_color">¿Cual es el color: #FFFFFF?</h1>
+				<div id="colorsContainer" class="d-flex flex-wrap justify-content-center"></div>
+				
+				<button id="restart" class="btn btn-secondary">Reiniciar</button>
+				<button id="backToMenu" class="btn btn-secondary">Volver al menu</button>
+			</div>
+
+			<template id="templateColorBox">
+				<div class="colorBox"></div>
+			</template>
+			
+		</div>
+		
+		<script src="app.js"></script>
+	</body>
+</html>

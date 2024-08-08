@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Gestion de vuelos</title>
+
+		<link rel="stylesheet" href="/styles/app.css" />
+	</head>
+	<body>
+		<div class="body-container">
+			<header class="header">
+				<nav class="nav-links">
+					<ul>
+						<li><a class="active" href="/">Vuelos</a></li>
+						<li><a href="/register">Alta</a></li>
+						<li><a href="/delete">Baja</a></li>
+						<li><a href="/edit">Modificacion</a></li>
+					</ul>
+				</nav>
+			</header>
+
+			<div class="p-container">
+				<table>
+					<thead>
+						<span>Proximos vuelos</span>
+						<p id="generalError" class="text-error"></p>
+					</thead>
+
+					<tr>
+						<th>Horario llegada</th>
+						<th>Vuelo</th>
+						<th>Linea aerea</th>
+						<th>Demorado</th>
+					</tr>
+
+					<tbody id="flightsTableBody"></tbody>
+				</table>
+			</div>
+			<footer></footer>
+		</div>
+
+		<template id="templateFlightRow">
+			<tr>
+				<td class="arrivalTime"></td>
+				<td class="codFlight"></td>
+				<td class="airLine"></td>
+				<td class="delayedB"></td>
+			</tr>
+		</template>
+		<script src="/scripts/index.js"></script>
+	</body>
+</html>

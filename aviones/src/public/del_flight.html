@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Gestion de vuelos</title>
+
+		<link rel="stylesheet" href="/styles/app.css" />
+	</head>
+	<body>
+		<div class="body-container">
+			<header class="header">
+				<nav class="nav-links">
+					<ul>
+						<li><a href="/">Vuelos</a></li>
+						<li><a href="/register">Alta</a></li>
+						<li><a class="active" href="/delete">Baja</a></li>
+						<li><a href="/edit">Modificacion</a></li>
+					</ul>
+				</nav>
+			</header>
+
+			<div class="p-container">
+				<span>Baja</span>
+				<p id="generalError" class="text-error"></p>
+				<form class="form" id="form" novalidate>
+					<div class="del-container">
+						<select id="codFlightSelect">
+							<option value="" disabled selected>
+								Seleccione un vuelo
+							</option>
+						</select>
+
+						<button type="submit">Eliminar</button>
+					</div>
+				</form>
+			</div>
+			<footer></footer>
+		</div>
+
+		<template id="templateOptionFlight">
+			<option></option>
+		</template>
+
+		<script type="module" src="/scripts/del_flight.js"></script>
+	</body>
+</html>
