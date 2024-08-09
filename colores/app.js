@@ -9,8 +9,6 @@ const templateCardColor = document.getElementById("templateColorBox");
 let currentHexColor;
 let currentDifficulty;
 
-/// falta que en facil los colores sean similares y en dificil los colores sean distintos
-
 document.addEventListener("click", (e) => {
 	if (e.target.matches("#play")) {
 		const difficulty = document.getElementById("difficulty").value;

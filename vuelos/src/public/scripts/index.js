@@ -7,7 +7,6 @@ const generalError = document.getElementById("generalError");
 document.addEventListener("DOMContentLoaded", async () => {
 	try {
 		const response = await fetch("/api/flights");
-
 		const result = await response.json();
 
 		if (result.success) {

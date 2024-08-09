@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 		if (flightDetails && flightDetails.success) {
 			const flight = flightDetails.flight;
-			arrivalTimeInput.placeholder = flight.arrivalTime;
+			arrivalTimeInput.value = flight.arrivalTime;
 			airLineInput.placeholder = flight.airLine;
 			delayedBInput.checked = flight.delayedB === 1;
 		}
