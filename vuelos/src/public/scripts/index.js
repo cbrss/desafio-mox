@@ -20,7 +20,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 				const airLineCell = clone.querySelector(".airLine");
 				const delayedBCell = clone.querySelector(".delayedB");
 
-				arrivalTimeCell.textContent = flight.arrivalTime;
+				const [hours, minutes] = flight.arrivalTime.split(":");
+				arrivalTimeCell.textContent = `${hours}:${minutes}`;
+
 				codFlightCell.textContent = flight.codFlight;
 				airLineCell.textContent = flight.airLine;
 				delayedBCell.textContent = flight.delayedB === 0 ? "No" : "Si";
